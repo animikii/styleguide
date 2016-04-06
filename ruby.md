@@ -74,6 +74,17 @@
   "true"  if true
   "true"  unless false
   ```
+* Leave a space after a `class` and before its `end`.
+
+  ```ruby
+  class Person
+
+    def method
+      # ...
+    end
+
+  end
+  ```
 
 ## Documentation
 
@@ -144,7 +155,7 @@ end
 
   ```ruby
   def some_method(with, arguments)
-    #code
+    # ...
   end
   ```
 * Use `each` to iterate over `Enumerable` objects.
@@ -169,6 +180,7 @@ end
   if success?
     "success"
   else
+
     "failure"
   end
   ```
@@ -192,3 +204,81 @@ end
   ```
 * Use `do`...`end` for multi-line blocks. Use `{`...`}` for single-line blocks.
 * Don't use `return` unless it's required.
+
+## Structure
+
+* Don't use `@@class_variables` unless you know what you're doing.
+* Use `self.method_name` to define class methods.
+* Don't indent `private`, `protected`, or `public`.
+
+  ```ruby
+  class Person
+
+    def some_method
+      # ...
+    end
+
+  private
+
+    def method_name
+      # ...
+    end
+
+  end
+  ```
+* Use `self` when referring to internal attributes.
+
+  ```ruby
+  class Person
+
+    attr_accesible :first_name, last_name
+
+    def full_name
+      "#{ self.first_name } #{ self.last_name }"
+    end
+
+  end
+  ```
+
+## Exceptions
+
+* Don't rescue `StandardError`, instead, rescue specific exceptions.
+
+## Strings
+
+* Use string interpolation, not concatenation.
+
+  ```ruby
+  # Bad
+  "Something " + some_var + " wrong?"
+
+  # Good
+  "Something #{ some_var } wrong?"
+  ```
+* When constructing a large string, use `<<` instead of `+`.
+
+  ```ruby
+  # Bad
+  html = "<p>"
+  html = html + some_variable
+  html = html + "</p>"
+
+  # Good
+  html = "<p>"
+  html << some_variable
+  html << "</p>"
+  ```
+
+## Hashes
+
+May the hash rocket rest in piece.
+
+* Use the new hash rocket syntax.
+
+  ```ruby
+  # Bad :'(
+  { :key => "value" }
+
+  # Good :|
+  { key: "value" }
+  ```
