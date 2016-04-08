@@ -1,5 +1,7 @@
 # Rails
 
+When seeking guidance on how to design a feature, consult this guide, follow existing conventions in the codebase, or follow Rails conventions.
+
 ## Gems
 
 These are the gems we typically use.
@@ -114,4 +116,17 @@ module User::HasPermissions
   end
 
 end
+```
+
+## Controllers
+
+### Inheritance
+
+Each controller namespace should have a `BaseController` which all controllers in that namespace should inherit from. The `BaseController` is a place to setup any objects, do permission checks, etc.
+
+```
+admin/
+  base_controller.rb
+  users_controller.rb
+  posts_controller.rb
 ```
