@@ -122,11 +122,28 @@ end
 
 ### Inheritance
 
-Each controller namespace should have a `BaseController` which all controllers in that namespace should inherit from. The `BaseController` is a place to setup any objects, do permission checks, etc.
+Each controller namespace should have a `BaseController` which all controllers in that namespace inherit from. The `BaseController` is a place to setup any objects, do permission checks, etc.
 
 ```
 admin/
   base_controller.rb
   users_controller.rb
   posts_controller.rb
+```
+
+## Documentation
+
+Often an application requires some additional documentation, such as how-to guides for performing a certain task, or development notes about a large change that occurred. Documentation like this should be stored in `doc/how_to`, and `doc/dev_notes` respectively. Prefix documents with `ymd` timestamps (i.e. `20160413_example_title.txt`). Use whatever extension makes sense, such as `.rb`, `.md`, `.sql`, `.txt`, etc.
+
+Here's an example `doc/` folder structure.
+
+```
+doc/
+  how_to/
+    20100101_generate_user_report.sql
+    20110101_mark_user_as_denied.rb
+  dev_notes/
+    20120101_transition_to_postgres.md
+    20130101_reset_postgres_sequences.sql
+    20140101_pci_compliance.md
 ```
