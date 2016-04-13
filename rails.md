@@ -147,3 +147,5 @@ doc/
     20130101_reset_postgres_sequences.sql
     20140101_pci_compliance.md
 ```
+
+Over time, `doc/dev_notes/` may become quite large, and contain documentation that isn't relevant to current development. When this occurs, move older documentation to `doc/dev_notes/archive` to keep the working set of documentation small and manageable.
