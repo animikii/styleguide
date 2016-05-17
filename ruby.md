@@ -381,3 +381,7 @@ end
   # Good
   foos = Array(foo)
   ```
+
+## Strings
+
+* Don't use `Object#to_s` on interpolated objects, as it's invoked automatically.
