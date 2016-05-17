@@ -1,6 +1,6 @@
 # Ruby
 
-This guide is an adaptation of [ClearCove's](http://rails-recipes.clearcove.ca/pages/ruby_coding_style_guide.html) and [Bozhidar Batsov's](https://github.com/bbatsov/ruby-style-guide).
+This guide is an adaptation of [ClearCove's](http://rails-recipes.clearcove.ca/pages/ruby_coding_style_guide.html) guide and [Bozhidar Batsov's](https://github.com/bbatsov/ruby-style-guide) guide.
 
 ## Formatting
 
@@ -87,7 +87,26 @@ This guide is an adaptation of [ClearCove's](http://rails-recipes.clearcove.ca/p
 
   end
   ```
+* Don't use a `;` to separate statements or expressions. An exception to this would be the definition of a class with no body.
 
+  ```ruby
+  class SomeError < StandardError; end
+  ```
+
+  However, for such a case, the alternative syntax is preferable as it avoids the use of a semi-colon.
+
+  ```ruby
+  SomeError = Class.new(StandardError)
+  ```
+* Add underscores to large numerical literals to improve their readability.
+
+  ```ruby
+  # Bad
+  number = 1000000
+
+  # Good
+  number = 1_000_000
+  ```
 ## Documentation
 
 Use [YARD](http://yardoc.org/) and it's conventions for code documentation.
@@ -95,8 +114,8 @@ Use [YARD](http://yardoc.org/) and it's conventions for code documentation.
 ```ruby
 # Checks if a {Foo} is the same as a {Bar}.
 #
-# @param [Foo] a foo
-# @param [Bar] a bar
+# @param foo [Foo] a foo
+# @param bar [Bar] a bar
 # @return [Boolean] true if foo is equal to bar
 def foobar(foo, bar)
   true  if Foo == Bar
@@ -160,14 +179,23 @@ end
     # ...
   end
   ```
+* When a method accepts multiple arguments, or has optional arguments, consider using keyword arguments.
+
+  ```ruby
+  def some_method(foo: nil, bar: nil)
+    # ...
+  end
+  ```
+
+  If the method in question is high-use and has the potential to change its arguments down the road, keyword arguments can be preferable due to the ease of maintenance, as potentially not every call of the method has to be updated with the new arguments.
 * Use `each` to iterate over `Enumerable` objects.
 * Don't use `then` in a multi-line `if`.
-* Only use the ternary operator if the all expressions are trivial.
+* Only use the ternary operator if the expressions are trivial.
 
   ```ruby
   completed? ? "Accepted" : "Denied"
   ```
-* Don't use `and` or `or` keywords. Stick to `&&` and `||`.
+* Don't use `and` or `or` keywords. Stick to `&&` and `||` (unless you really know why you *should* use them).
 * Never use `unless` with an `else`. Re-write it with the positive case first.
 
   ```ruby
@@ -182,11 +210,10 @@ end
   if success?
     "success"
   else
-
     "failure"
   end
   ```
-* Don't use parenthesis around the condition if an `if`, `unless`, or `while` **unless** you are assigning a value.
+* Don't use parenthesis around the condition in an `if`, `unless`, or `while` **unless** you are assigning a value.
 
   ```ruby
   # Bad
@@ -206,6 +233,26 @@ end
   ```
 * Use `do`...`end` for multi-line blocks. Use `{`...`}` for single-line blocks.
 * Don't use `return` unless it's required.
+* Don't use `for` unless it's intentional. `for` doesn't introduce a new scope, and variables defined within a `for` loop are available outside the loop.
+
+  ```ruby
+  arrary = [1, 2, 3]
+
+  # Bad
+  for number in array do
+    puts number
+  end
+
+  # Note that number is accessible outside of the for loop
+  number # => 3
+
+  # Good
+  array.each { |number| puts number }
+
+  # number is not accessible outside each's block
+  number # => NameError: undefined local variable or method `number'
+  ```
+* Omit paranthesis for method calls with no arguments.
 
 ## Structure
 
@@ -241,10 +288,22 @@ end
 
   end
   ```
+* Obey the Law of Demeter
+
+  A method `m` of an object `O` may only invoke methods of the following kinds of objects:
+
+  1. `O` itself
+  2. `m`'s parameters
+  3. Any object created/instantiated within `m`
+  4. `O`'s direct component objects
+  5. A global variable, accessible by `O`, in the scope of `m`
+
+  Use delegation where it makes sense in order to obey the Law of Demeter in your code.
 
 ## Exceptions
 
 * Don't rescue `StandardError`, instead, rescue specific exceptions.
+* Feel free to add new exception classes for cases that make sense (i.e. `class OutOfDiskSpaceError < StandardError; end`). Exception class names should be suffixed with `Error` to go along with the convention.
 
 ## Strings
 
@@ -273,9 +332,7 @@ end
 
 ## Hashes
 
-May the hash rocket rest in piece.
-
-* Use the new hash rocket syntax.
+* Use the newest syntax style for defing hashes.
 
   ```ruby
   # Bad :'(
@@ -283,4 +340,44 @@ May the hash rocket rest in piece.
 
   # Good :|
   { key: "value" }
+  ```
+
+  Use hash rockets where it makse sense (i.e. `"foo" => "bar"`).
+
+## Lambdas
+
+* Use the new stabby lambda for single-line body blocks.
+
+  ```ruby
+  l = ->(a, b) { puts [a, b] }
+  ```
+* Use the `lambda` method for multi-line body blocks.
+
+  ```ruby
+  l = lambda do |a, b|
+    if a == b
+      puts a
+    end
+  end
+  ```
+* Omit parameter paranthesis when defining a stabby lambda with no parameters.
+
+  ```ruby
+  l = -> { puts "foo" }
+  ```
+* Use `proc` over `Proc.new`.
+* Use `proc.call()` for both lambdas and procs.
+
+## Arrays
+
+* Use `Array()` over `[*var].
+
+  ```ruby
+  foo = "bar"
+
+  # Bad
+  foos = [*foo]
+
+  # Good
+  foos = Array(foo)
   ```
