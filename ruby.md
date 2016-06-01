@@ -342,7 +342,7 @@ end
   { key: "value" }
   ```
 
-  Use hash rockets where it makse sense (i.e. `"foo" => "bar"`).
+  Use hash rockets where it makes sense (i.e. `"foo" => "bar"`).
 
 ## Lambdas
 
