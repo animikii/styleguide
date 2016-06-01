@@ -76,7 +76,7 @@ This guide is an adaptation of [ClearCove's](http://rails-recipes.clearcove.ca/p
   "true"  if true
   "true"  unless false
   ```
-* Leave a space after a `class` and before its `end`.
+* Leave an empty line after a `class` and before its `end`.
 
   ```ruby
   class Person
