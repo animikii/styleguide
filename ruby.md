@@ -370,7 +370,7 @@ end
 
 ## Arrays
 
-* Use `Array()` over `[*var].
+* Use `Array()` over `[*var]`.
 
   ```ruby
   foo = "bar"
