@@ -236,7 +236,7 @@ end
 * Don't use `for` unless it's intentional. `for` doesn't introduce a new scope, and variables defined within a `for` loop are available outside the loop.
 
   ```ruby
-  arrary = [1, 2, 3]
+  array = [1, 2, 3]
 
   # Bad
   for number in array do
