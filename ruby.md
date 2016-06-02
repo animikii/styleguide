@@ -76,7 +76,7 @@ This guide is an adaptation of [ClearCove's](http://rails-recipes.clearcove.ca/p
   "true"  if true
   "true"  unless false
   ```
-* Leave a space after a `class` and before its `end`.
+* Leave an empty line after a `class` and before its `end`.
 
   ```ruby
   class Person
@@ -236,7 +236,7 @@ end
 * Don't use `for` unless it's intentional. `for` doesn't introduce a new scope, and variables defined within a `for` loop are available outside the loop.
 
   ```ruby
-  arrary = [1, 2, 3]
+  array = [1, 2, 3]
 
   # Bad
   for number in array do
@@ -280,7 +280,7 @@ end
   ```ruby
   class Person
 
-    attr_accesible :first_name, last_name
+    attr_accesible :first_name, :last_name
 
     def full_name
       "#{ self.first_name } #{ self.last_name }"
@@ -342,7 +342,7 @@ end
   { key: "value" }
   ```
 
-  Use hash rockets where it makse sense (i.e. `"foo" => "bar"`).
+  Use hash rockets where it makes sense (i.e. `"foo" => "bar"`).
 
 ## Lambdas
 
@@ -370,7 +370,7 @@ end
 
 ## Arrays
 
-* Use `Array()` over `[*var].
+* Use `Array()` over `[*var]`.
 
   ```ruby
   foo = "bar"
