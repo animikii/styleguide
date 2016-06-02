@@ -385,3 +385,5 @@ end
 ## Strings
 
 * Don't use `Object#to_s` on interpolated objects, as it's invoked automatically.
+* Prefer double-quotes `"` for defining string literals.
+  * If the string contains double-quotes `"`, use single-quotes `'` to define it.
