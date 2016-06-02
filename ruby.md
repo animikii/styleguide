@@ -303,7 +303,7 @@ end
 ## Exceptions
 
 * Don't rescue `StandardError`, instead, rescue specific exceptions.
-* Feel free to add new exception classes for cases that make sense (i.e. `class OutOfDiskSpaceError < StandardError; end`). Exception class names should be suffixed with `Error` to go along with the convention.
+* Feel free to add new exception classes for cases that make sense (i.e. `OutOfDiskSpaceError = Class.new(StandardError)`). Exception class names should be suffixed with `Error` to go along with the convention.
 
 ## Strings
 
