@@ -1,6 +1,6 @@
 # Rails
 
-When seeking guidance on how to design a feature, consult this guide, follow existing conventions in the codebase, or follow Rails conventions.
+When seeking guidance on how to design a feature, consult this guide, follow existing conventions in the codebase, or follow Rails conventions. [The API](http://api.rubyonrails.org/) is your friend.
 
 ## Gems
 
@@ -66,6 +66,18 @@ class User
 end
 ```
 
+### Validations
+
+Use the new syntax for validations
+
+```ruby
+# Bad
+validates_presence_of :title
+
+# Good
+validates :title, presence: true
+```
+
 ## Permissions
 
 Use [this pattern](http://rails-recipes.clearcove.ca/pages/permissions_and_user_roles.html) for doing permissions.
@@ -126,6 +138,8 @@ end
 
 ## Controllers
 
+* Use [symbols](http://guides.rubyonrails.org/layouts_and_rendering.html#the-status-option) instead of numerical HTTP status codes.
+
 ### Inheritance
 
 Each controller namespace should have a `BaseController` which all controllers in that namespace inherit from. The `BaseController` is a place to setup any objects, do permission checks, etc.
@@ -155,3 +169,17 @@ doc/
 ```
 
 Over time, `doc/dev_notes/` may become quite large, and contain documentation that isn't relevant to current development. When this occurs, move older documentation to `doc/dev_notes/archive` to keep the working set of documentation small and manageable.
+
+## Mailers
+
+* Name mailers with the `Mailers` suffix (i.e. `CommentMailer`).
+
+## ActiveSupport
+
+* Use Ruby 2.3's `&.` over `try`.
+* Prefer Ruby's built-in methods over `ActiveSupport`s.
+
+## Time
+
+* Set the timezone in `config/application.rb`.
+* Use `Time.current` over `Time.now`.
