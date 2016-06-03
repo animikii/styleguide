@@ -27,7 +27,17 @@ Use the following format for models.
 ```ruby
 class User
 
-  include User::HasPermissions
+  ##
+  # Constants
+  #
+
+  ##
+  # Attributes
+  #
+
+  ##
+  # Extensions
+  #
 
   ##
   # Associations
@@ -52,10 +62,6 @@ class User
   ##
   # Instance methods
   #
-
-protected
-
-private
 
 end
 ```
