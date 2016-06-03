@@ -172,7 +172,7 @@ Over time, `doc/dev_notes/` may become quite large, and contain documentation th
 
 ## Mailers
 
-* Name mailers with the `Mailers` suffix (i.e. `CommentMailer`).
+* Name mailers with the `Mailer` suffix (i.e. `CommentMailer`).
 
 ## ActiveSupport
 
