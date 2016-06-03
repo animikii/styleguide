@@ -2,7 +2,7 @@
 
 ## Documentation
 
-(Ruby Documentation)[http://ruby-doc.org/].
+[Ruby Documentation](http://ruby-doc.org/).
 
 ## `%` literals
 
@@ -116,4 +116,4 @@ Combination:
 
 ## Regular Expressions
 
-Check out (Rubular)[http://rubular.com/].
+Check out [Rubular](http://rubular.com/).
