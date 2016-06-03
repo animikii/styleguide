@@ -117,3 +117,21 @@ Combination:
 ## Regular Expressions
 
 Check out [Rubular](http://rubular.com/).
+
+## Here Documents
+
+```ruby
+str = <<-EOS
+  My string
+EOS
+```
+
+The `-` allows you to indent the delimiter.
+
+```ruby
+def some_method
+  str = <<EOS
+    My string
+EOS
+end
+```
