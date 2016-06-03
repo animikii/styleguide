@@ -334,15 +334,6 @@ end
 * Prefer double-quotes `"` for defining string literals.
   * If the string contains double-quotes `"`, use single-quotes `'` to define it.
 * Prefer the use of `()` for delimiters of `%` literals. In the case of regular expressions, `{}` to avoid conflicts, since `()` commonly appear.
-  * `q` for non-interpolated strings, like `''`
-  * `Q` for interpolated strings, like `""`
-  * `s` for non-interpolated symbols
-  * `r` for interpolated regular expressions (flags can appear after the closing delimiter)
-  * `i` for non-interpolated Array of symbols separated by whitespace
-  * `I` for interpolated Array of symbols separated by whitespace
-  * `w` for non-interpolated Array of strings, separated by whitespace
-  * `W` for interpolated Array of strings, separated by whitespace
-  * `x` for interpolated shell command
 
 ## Hashes
 
