@@ -132,7 +132,7 @@ end
 * Use `snake_case` for methods and variables.
 * Use `CamelCase` for classes and modules (keep acronyms like HTTP, or XML uppercase).
 * Use `SCREAMING_SNAKE_CASE` for constants.
-* Prefix boolean variables with `is_` or `has_` when possible.
+* Avoid prefixing methods that return a boolean with verbs such as `is_` or `has_`.
 
   ```ruby
   is_admin = true
