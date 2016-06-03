@@ -146,6 +146,7 @@ end
   end
   ```
 * The names of potentially dangerous methods (i.e. methods that modify `self` or the arguments, `exit!`, etc.) should end with an exclamation mark. Bang methods should only exist if a non-bang method exists. ([More on this](http://dablog.rubypal.com/2007/8/15/bang-methods-or-danger-will-rubyist)).
+  * Idea: the dangerous method can perform the operation on `self`, the non-dangerous version can perform the operation on a `dup` of the `self`.
 * Use one-letter variables for short block/method parameters.
   * `k` for the key part of a `Hash`
   * `v` for the value part of a `Hash`
