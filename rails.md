@@ -183,3 +183,16 @@ Over time, `doc/dev_notes/` may become quite large, and contain documentation th
 
 * Set the timezone in `config/application.rb`.
 * Use `Time.current` over `Time.now`.
+
+## Translations
+
+```yaml
+en:
+  time:
+    formats:
+      full: "%B %-d, %Y @ %-l:%M%P"
+
+  helpers:
+    select:
+      prompt: "-- Please select --"
+```
