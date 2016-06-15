@@ -190,22 +190,18 @@ Over time, `doc/dev_notes/` may become quite large, and contain documentation th
 
 * Set the timezone in `config/application.rb`.
 * Use `Time.current` over `Time.now`.
-* Prefer the use of localizations for custom time formats over an initializer (See Translations section).
+* Prefer the use of localizations for custom time formats over an initializer.
 
-## Translations
-
-* Add custom date and time formats using localizations.
+  In `config/locales/en.yml`, add your time formats.
 
   ```yaml
   en:
     time:
       formats:
         full: "%B %-d, %Y @ %-l:%M%P"
-
-    helpers:
-      select:
-        prompt: "-- Please select --"
   ```
+
+  Use the `l` or `localize` method to use the format.
 
   ```ruby
   # In a template, use the time format like this
