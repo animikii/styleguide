@@ -91,6 +91,7 @@ module User::HasPermissions
 
     # Checks if `actor` can list these resources.
     #
+    # @param actor [User]
     # @return [Boolean] true if `actor` can list these resources
     def listable_by?(actor)
       actor.is_a?(User)
@@ -98,6 +99,7 @@ module User::HasPermissions
 
     # Checks if `actor` can create an instance of this resource.
     #
+    # @param actor [User]
     # @return [Boolean] true if `actor` can create an instance of this resource
     def creatable_by?(actor)
       actor.is_a?(User)
@@ -107,6 +109,7 @@ module User::HasPermissions
 
   # Checks if `actor` can view an instance of this resource.
   #
+  # @param actor [User]
   # @return [Boolean] true if `actor` can view an instance of this resource
   def viewable_by?(actor)
     actor.is_a?(User)
@@ -114,6 +117,7 @@ module User::HasPermissions
 
   # Checks if `actor` can create this instance of this resource.
   #
+  # @param actor [User]
   # @return [Boolean] true if `actor` can create this instance of this resource
   def creatable_by?(actor)
     actor.is_a?(User)
@@ -121,6 +125,7 @@ module User::HasPermissions
 
   # Checks if `actor` can update this instance of this resource.
   #
+  # @param actor [User]
   # @return [Boolean] true if `actor` can update this instance of this resource
   def updatable_by?(actor)
     actor.is_a?(User)
@@ -128,12 +133,14 @@ module User::HasPermissions
 
   # Checks if `actor` can destroy this instance of this resource.
   #
+  # @param actor [User]
   # @return [Boolean] true if `actor` can destroy this instance of this resource
   def destroyable_by?(actor)
     actor.is_a?(User)
   end
 
 end
+
 ```
 
 ## Controllers
