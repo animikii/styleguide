@@ -1,0 +1,7 @@
+en:
+  time:
+    formats:
+      full: "%B %-d, %Y @ %-l:%M%P"
+  helpers:
+    select:
+      prompt: "-- Please select --"

@@ -20,6 +20,10 @@ These are the gems we typically use.
 * `sidekiq` for background job processing
 * `paperclip` for file attachments
 
+## Defaults
+
+Use the default configuration files in `/rails` for new projects.
+
 ## Models
 
 Use the following format for models.
