@@ -1,0 +1,40 @@
+'source.ruby':
+  'Model Comment':
+    'prefix': 'modc'
+    'body': """
+      ##
+      # Constants
+      #
+
+      ##
+      # Attributes
+      #
+
+      ##
+      # Extensions
+      #
+
+      ##
+      # Associations
+      #
+
+      ##
+      # Validations
+      #
+
+      ##
+      # Callbacks
+      #
+
+      ##
+      # Scopes
+      #
+
+      ##
+      # Class methods
+      #
+
+      ##
+      # Instance methods
+      #
+    """

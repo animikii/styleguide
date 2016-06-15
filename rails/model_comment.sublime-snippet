@@ -1,0 +1,41 @@
+<snippet>
+  <content><![CDATA[
+##
+# Constants
+#
+
+##
+# Attributes
+#
+
+##
+# Extensions
+#
+
+##
+# Associations
+#
+
+##
+# Validations
+#
+
+##
+# Callbacks
+#
+
+##
+# Scopes
+#
+
+##
+# Class methods
+#
+
+##
+# Instance methods
+#
+]]></content>
+  <tabTrigger>modc</tabTrigger>
+  <scope>source.ruby</scope>
+</snippet>
