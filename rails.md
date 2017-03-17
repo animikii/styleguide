@@ -19,6 +19,7 @@ These are the gems we typically use.
 * `kramdown` for rendering Markdown
 * `sidekiq` for background job processing
 * `paperclip` for file attachments
+* `rspec` for testing
 
 ## Defaults
 
@@ -211,3 +212,22 @@ Over time, `doc/dev_notes/` may become quite large, and contain documentation th
   # In a template, use the time format like this
   <%= l datetime_object, format: :full %>
   ```
+
+## Testing
+
+    Coming Soon ...
+
+    Include this in the gem file so the spec files will be generated.
+
+    group :test do
+
+      gem 'database_cleaner'
+
+    end
+
+    group :development, :test do
+
+      gem 'rspec-rails', '~> 3.4'
+      gem "factory_girl_rails", "~> 4.0"
+
+    end
