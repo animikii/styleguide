@@ -215,9 +215,25 @@ Over time, `doc/dev_notes/` may become quite large, and contain documentation th
 
 ## Testing
 
-    Coming Soon ...
+    bundle exec rspec
 
-    Include this in the gem file so the spec files will be generated.
+Whereever possible use locals. This will make spec
+maintenance a minimum.
+
+    ...
+
+    scenario "foo" do
+      expect(page).to have_content I18n.t("page.controller.action.success")
+    end
+
+    ...
+
+using `il8n-tasks` https://github.com/glebm/i18n-tasks#usage
+
+    i18n-tasks add-missing
+
+Include this in the gem file, review `rails/rails_helper.example.rb` and `rails/spec_helper.example.rb` for defaults
+or https://github.com/rspec/rspec-rails#installation
 
     group :test do
 
@@ -225,9 +241,24 @@ Over time, `doc/dev_notes/` may become quite large, and contain documentation th
 
     end
 
-    group :development, :test do
+    group :development do
 
-      gem 'rspec-rails', '~> 3.4'
-      gem "factory_girl_rails", "~> 4.0"
+      # i18n-tasks helps you find and manage missing and unused translations. https://github.com/glebm/i18n-tasks#usage
+      gem 'i18n-tasks', '~> 0.9.12'
 
     end
+
+    group :development, :test do
+
+      # test suit
+      gem 'capybara'
+      gem 'rspec-rails', '~> 3.5'
+      gem "factory_girl_rails", "~> 4.0"
+      gem 'shoulda-matchers', '~> 3.1'
+
+    end
+
+If you ave using `clearance` gem, you can generate specs to start off from
+https://github.com/thoughtbot/clearance#ready-made-feature-specs
+
+    rails generate clearance:specs
