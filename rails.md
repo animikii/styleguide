@@ -217,7 +217,7 @@ Over time, `doc/dev_notes/` may become quite large, and contain documentation th
 
     bundle exec rspec
 
-Whereever possible use locals. This will make spec
+Wherever possible use locals. This will make spec
 maintenance a minimum.
 
     ...
