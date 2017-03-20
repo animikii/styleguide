@@ -258,7 +258,7 @@ or https://github.com/rspec/rspec-rails#installation
 
     end
 
-If you ave using `clearance` gem, you can generate specs to start off from
+If you are using `clearance` gem, you can generate specs to start off from
 https://github.com/thoughtbot/clearance#ready-made-feature-specs
 
     rails generate clearance:specs
