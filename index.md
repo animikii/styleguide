@@ -9,6 +9,23 @@ Rules to live by
 - pure functions - *no side effects!*
 - use classes for reusable objects
 - maintain immutable data
+- No trailing whitespace
+- Use Semicolons
+- 80 characters per line
+
+
+### No trailing whitespace
+
+Just like you brush your teeth after every meal, you clean up any trailing whitespace in your JS files before committing. Otherwise the rotten smell of careless neglect will eventually drive away contributors and/or co-workers.
+
+### Use Semicolons
+
+According to [scientific research](http://news.ycombinator.com/item?id=1547647), the usage of semicolons is a core value of our community. Consider the points of [the opposition](http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding), but be a traditionalist when it comes to abusing error correction mechanisms for cheap syntactic pleasures.
+
+### 80 characters per line
+
+Limit your lines to 80 characters. Yes, screens have gotten much bigger over the last few years, but your brain has not. Use the additional room for split screen, your editor supports that, right?
+
 
 # Css/Sass
 
