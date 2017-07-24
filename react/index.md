@@ -150,19 +150,6 @@ The initial takeLatest will be a `FILE|FETCH` using our naming convention.
 
 http://redux.js.org/docs/recipes/reducers/NormalizingStateShape.html#designing-a-normalized-state
 
-## Notes
-Having separate apps for the registrars and facilitator dashboard.
-
-*Pros*
-
-- share between the apps
-- One app not two
-
-*Cons*
-
-- Deploying as one app and not two, keeping them in sync.
-
-
 ### Problem having client out of sync with the back-end.
 
 Solution: Have the version sent in every api call.
