@@ -130,58 +130,52 @@ This however only supports 1-2 levels
   {% if next %}
     <a class="nav nav-next" href="{{ next }}"><i class="fa fa-chevron-right"></i></a>
   {% endif %}
-</div>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+</div>
 ```
 
-#### menu using a recursive loop
-This is a simple menu, using a macro for the loop render.
+#### nav using a recursive loop
+This is a simple nav, using a macro for the loop render.
 
 ```liquid
-// _sidebar.liquid
-<div class="scrollbar-inner">
-  <div class="highlightable">
-    <ul class="topics">
-      {% assign loop = page.root.menu %}
-      {% include 'sidebar_macro' %}
-    </ul>
-
-    <section id="footer">
-      <p><a href="{{ page.admin_link }}" id="admin_link">Admin</a></p>
-      <p>Learn With Animikii</p>
-    </section>
-  </div>
+// _nav_side.liquid
+<div class="nav-side">
+  {% assign nav_loop = page.root.menu %}
+  
+  <h3><a href="{{ page.root.url }}">{{ page.root.name }}</a></h3>
+  <ul class="nav">
+    {% include 'nav_side_loop' %}
+  </ul>
 </div>
 ```
 
 ```liquid
-// _sidebar_macro.liquid
-{% for p in loop %}
+// _nav_side_loop.liquid
+{% for p in nav_loop %}
   {% if p.id == page.id %}
     {% assign current_page = 'active' %}
   {% else %}
     {% assign current_page = '' %}
   {% endif %}
 
-  {% if p.id == page.root.id %}
-    {% assign parent_page = "parent" %}
-  {% else %}
-    {% assign parent_page = "" %}
-  {% endif %}
-
-  <li class="dd-item {{ parent_page }} {{ current_page }}" data-nav-id="{{ p.urlname }}">
-    <a href="{{ p.url }}" {% if p.header.class %}class="{{ p.header.class }}"{% endif %}>
-    <i class="fa fa-check read-icon"></i>
-    <span>{{ p.name }}</span>
+  <li class="{{ current_page }}">
+    <a href="{{ p.url }}">
+      {% if p.id == page.id %}
+        <i class="fa fa-caret-right"></i>
+      {% endif %}
+      <span>{{ p.name }}</span>
     </a>
-
-    {% if p.has_visible_children? %}
-      <ul>
-        {% assign loop = p.visible_children %}
-        {% include 'sidebar_macro' %}
-      </ul>
+    
+    {% assign ancestors = page.ancestors | map: "id" | join: ' '  %}
+    {% if p.id == page.id or ancestors contains p.id %}
+      {% if p.has_visible_children? %}
+        <ul class="nav">
+          {% assign nav_loop = p.visible_children %}
+          {% include 'nav_side_loop' %}
+        </ul>
+      {% endif %}
     {% endif %}
   </li>
-{% endfor %}​
+{% endfor %}
 ```
 
 #### row loop
