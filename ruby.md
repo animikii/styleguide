@@ -31,10 +31,15 @@ This guide is an adaptation of [ClearCove's](http://rails-recipes.clearcove.ca/p
 * Use spaces around operators, after commas, colons and semicolons, around `{` and before `}`.
 
   ```ruby
-  sum = 1 + 2
-  a, b = 1, 2
-  1 > 2 ? true : false; puts "Hi"
-  [1, 2, 3].each { |e| puts e }
+  1 + 3
+  
+  array = [1, 2, 3, 4]
+  
+  hash = { :a => 1, :b => 2, :c => 3 }
+  
+  "#{ interpolated_strings }"
+  
+  lambda { |args| also_for_blocks }
   ```
 * No spaces after `(`, `[` or before `]`, `)`.
 
@@ -308,7 +313,7 @@ end
 
 ## Strings
 
-* Use string interpolation, not concatenation.
+* Use string interpolation, not concatenation. (Review [#formatting](#formatting) or more information on spacing.)
 
   ```ruby
   # Bad
