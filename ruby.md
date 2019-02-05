@@ -2,6 +2,37 @@
 
 This guide is an adaptation of [ClearCove's](http://rails-recipes.clearcove.ca/pages/ruby_coding_style_guide.html) guide and [Bozhidar Batsov's](https://github.com/bbatsov/ruby-style-guide) guide.
 
+## RuboCop
+We are using [RuboCop](https://docs.rubocop.org/en/latest/installation/) to police our standards as you develop.
+
+Global
+```
+$ gem install rubocop
+```
+
+Project
+```ruby
+group :development do
+  gem 'rubocop' ,         require: false
+  gem 'rubocop-airbnb',   require: false
+end
+```
+
+Config Files for RuboCop are general and [Airbnb](https://github.com/airbnb/ruby/tree/master/rubocop-airbnb)
+First Create a new file `.rubocop_airbnb.yml` in the same directory as your `.rubocop.yml` this file should contain
+
+```
+require:
+  - rubocop-airbnb
+```
+
+Next add the following to `.rubocop.yml` or add before `.rubocop_aki.yml` in your existing inherit_from
+```
+inherit_from:
+  - .rubocop_airbnb.yml
+  - .rubocop_aki.yml
+```
+
 ## Formatting
 
 * Use UTF-8 encoding.
