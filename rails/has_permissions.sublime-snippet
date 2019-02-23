@@ -6,54 +6,54 @@ module ${1:User}::HasPermissions
 
   class_methods do
 
-    # Checks if \`actor\` can list these resources.
+    # Checks if `actor` can list these resources.
     #
     # @param actor [${2:User}]
-    # @return [Boolean] true if \`actor\` can list these resources
+    # @return [Boolean] true if `actor` can list these resources
     def listable_by?(actor)
-      actor.is_a?(User)
+      actor.is_a?(${2})
     end
 
-    # Checks if \`actor\` can create an instance of this resource.
+    # Checks if `actor` can create an instance of this resource.
     #
     # @param actor [${2}]
-    # @return [Boolean] true if \`actor\` can create an instance of this resource
+    # @return [Boolean] true if `actor` can create an instance of this resource
     def creatable_by?(actor)
-      actor.is_a?(User)
+      actor.is_a?(${2})
     end
 
   end
 
-  # Checks if \`actor\` can view an instance of this resource.
+  # Checks if `actor` can view an instance of this resource.
   #
   # @param actor [${2}]
-  # @return [Boolean] true if \`actor\` can view an instance of this resource
+  # @return [Boolean] true if `actor` can view an instance of this resource
   def viewable_by?(actor)
-    actor.is_a?(User)
+    actor.is_a?(${2})
   end
 
-  # Checks if \`actor\` can create this instance of this resource.
+  # Checks if `actor` can create this instance of this resource.
   #
   # @param actor [${2}]
-  # @return [Boolean] true if \`actor\` can create this instance of this resource
+  # @return [Boolean] true if `actor` can create this instance of this resource
   def creatable_by?(actor)
-    actor.is_a?(User)
+    actor.is_a?(${2})
   end
 
-  # Checks if \`actor\` can update this instance of this resource.
+  # Checks if `actor` can update this instance of this resource.
   #
   # @param actor [${2}]
-  # @return [Boolean] true if \`actor\` can update this instance of this resource
+  # @return [Boolean] true if `actor` can update this instance of this resource
   def updatable_by?(actor)
-    actor.is_a?(User)
+    actor.is_a?(${2})
   end
 
-  # Checks if \`actor\` can destroy this instance of this resource.
+  # Checks if `actor` can destroy this instance of this resource.
   #
   # @param actor [${2}]
-  # @return [Boolean] true if \`actor\` can destroy this instance of this resource
+  # @return [Boolean] true if `actor` can destroy this instance of this resource
   def destroyable_by?(actor)
-    actor.is_a?(User)
+    actor.is_a?(${2})
   end
 
 end
