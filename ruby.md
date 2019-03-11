@@ -10,27 +10,23 @@ Global
 $ gem install rubocop
 ```
 
-Project
+your project `Gemfile`
 ```ruby
-group :development do
-  gem 'rubocop' ,         require: false
-  gem 'rubocop-airbnb',   require: false
+group :development, :test do
+  gem 'rubocop'
+  gem 'rubocop-rspec'
 end
 ```
 
-Config Files for RuboCop are general and [Airbnb](https://github.com/airbnb/ruby/tree/master/rubocop-airbnb)
-First Create a new file `.rubocop_airbnb.yml` in the same directory as your `.rubocop.yml` this file should contain
+Config Files for RuboCop
+Add the file [rails/.rubocop-rails.yml](/animikii/styleguide/tree/master/rails/.rubocop-rails.yml) to the project root.
+Update your `.rubocop.yml` to look this.
 
 ```
-require:
-  - rubocop-airbnb
-```
+require: rubocop-rspec
 
-Next add the following to `.rubocop.yml` or add before `.rubocop_aki.yml` in your existing inherit_from
-```
 inherit_from:
-  - .rubocop_airbnb.yml
-  - .rubocop_aki.yml
+  - .rubocop-rails.yml
 ```
 
 ## Formatting
@@ -63,13 +59,13 @@ inherit_from:
 
   ```ruby
   1 + 3
-  
+
   array = [1, 2, 3, 4]
-  
+
   hash = { :a => 1, :b => 2, :c => 3 }
-  
+
   "#{ interpolated_strings }"
-  
+
   lambda { |args| also_for_blocks }
   ```
 * No spaces after `(`, `[` or before `]`, `)`.
