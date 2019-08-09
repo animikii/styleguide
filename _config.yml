@@ -32,6 +32,7 @@ nav:
   - path: ruby/index.md
     subnav:
       - path: ruby/rails.md
+      - path: ruby/reference.md
   - path: git.md
   - path: liquid.md
   - path: react.md

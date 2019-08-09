@@ -1,4 +1,8 @@
-# Ruby Reference
+---
+layout: page
+title: Ruby Reference
+permalink: /ruby/reference
+---
 
 ## Documentation
 
