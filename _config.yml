@@ -26,14 +26,11 @@ kramdown:
       line_numbers: true
       start_line: 1
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+nav:
+  - path: communication.md
+  - path: ruby/index.md
+    subnav:
+      - path: ruby/rails.md
+  - path: git.md
+  - path: liquid.md
+  - path: react.md
