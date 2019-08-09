@@ -1,4 +1,8 @@
-# Communication
+---
+layout: page
+title: Communication
+permalink: /communication
+---
 
 Proper spelling, grammar, and punctuation is absolutely required in **all** communication.
 

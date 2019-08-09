@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div class="row">
+  <div class="col-md-12">
+    <h1>{{ page.title | escape }}</h1>
+
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    <p>
+      <em>{{ page.date | date: date_format }}</em>
+    </p>
+
+    <div class="posts">
+      {{ content }}
+    </div>
+
+  </div>
+</div>

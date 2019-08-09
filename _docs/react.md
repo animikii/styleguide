@@ -1,4 +1,8 @@
-# React
+---
+layout: page
+title: React
+permalink: /react
+---
 
 - Only include one React component per file (see below).
   - However, multiple [Stateless, or Pure, Components](https://facebook.github.io/react/docs/components-and-props.html) are allowed per file. eslint: [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).

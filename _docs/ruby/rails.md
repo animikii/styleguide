@@ -1,4 +1,8 @@
-# Rails
+---
+layout: page
+title: Rails
+permalink: /ruby/rails
+---
 
 When seeking guidance on how to design a feature, consult this guide, follow existing conventions in the codebase, or follow Rails conventions. [The API](http://api.rubyonrails.org/) is your friend.
 

@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{%- if page.title -%}
+  <h1 class="main-heading in-view">{{ page.title | escape }}</h1>
+{%- endif -%}
+
+{{ content }}
+
+
+
+<div class="home">
+  {%- if site.posts.size > 0 -%}
+    <h2>{{ page.list_title | default: "Posts" }}</h2>
+    {%- for post in site.posts -%}
+      <section class="section--post">
+        <div class="post-content">
+          <h2 class="in-view">{{ post.title | escape }}</h2>
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <p class="in-view">{{ post.date | date: date_format }} — {{ post.content | strip_html | truncatewords: 60 }}</p>
+          <a class="read-more strong in-view" href="{{ post.url | relative_url }}">Read More <!-- <i class="fas fa-angle-double-right"></i> --></a>
+        </div>
+      </section>
+    {%- endfor -%}
+  {%- endif -%}
+
+</div>

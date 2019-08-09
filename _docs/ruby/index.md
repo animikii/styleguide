@@ -1,4 +1,8 @@
-# Ruby
+---
+layout: page
+title: Ruby
+permalink: /ruby
+---
 
 This guide is an adaptation of [ClearCove's](http://rails-recipes.clearcove.ca/pages/ruby_coding_style_guide.html) guide and [Bozhidar Batsov's](https://github.com/bbatsov/ruby-style-guide) guide.
 

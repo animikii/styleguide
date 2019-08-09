@@ -1,0 +1,53 @@
+<header class="hd">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fix-nav" role="navigation">
+    <div class="container">
+      <span class="navbar-text bg-primary">
+        INDIGENOUS<br />INNOVATION
+      </span>
+      <a class="navbar-brand" href="{{ "/" | relative_url }}">
+        <img alt="bird.png" src="https://animikii.imgix.net/images/bird.png" />
+      </a>
+      <span class="navbar-text bg-primary">
+        SINCE<br />2003
+      </span>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ "/" | relative_url }}">Home</a>
+          </li>
+
+          {%- assign paths = site.pages | map: "path" | join: ' ' -%}
+          <!-- {{ paths }} -->
+          {%- for item in site.nav -%}
+            {%- assign p = site.pages | where: "path", item.path | first -%}
+
+            {%- if item.subnav -%}
+              <li class="nav-item dropdown {% if p.url == page.url %}active{% endif %}">
+                <a class="nav-link dropdown-toggle" href="{{ p.url | relative_url }}" data-reference="parent">{{ p.title | escape }}<b class="caret"></b></a>
+                <div class="dropdown-menu">
+                  {%- for sub_item in item.subnav -%}
+                    {%- assign s = site.pages | where: "path", sub_item.path | first -%}
+                    <a class="dropdown-item" href="{{ s.url }}">{{ s.title }}</a>
+                  {%- endfor -%}
+                </div>
+
+              </li>
+            {%- else -%}
+              <li class="nav-item {% if p.url == page.url %}active{% endif %}">
+                <a class="nav-link" href="{{ p.url }}">{{ p.title }}</a>
+              </li>
+            {%- endif -%}
+
+          {%- endfor -%}
+
+        </ul><!-- /.navbar-nav -->
+      </div><!-- /.navbar-collapse -->
+    </div>
+  </nav><!-- /.navbar -->
+</header>
