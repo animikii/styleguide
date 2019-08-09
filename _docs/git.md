@@ -4,8 +4,6 @@ title: Git
 permalink: /git
 ---
 
-# Git
-
 ### Gitflow Workflow
 
 The overall flow of Gitflow is:

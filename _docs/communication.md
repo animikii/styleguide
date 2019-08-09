@@ -4,8 +4,6 @@ title: Communication
 permalink: /communication
 ---
 
-# Communication
-
 Proper spelling, grammar, and punctuation is absolutely required in **all** communication.
 
 ## Slack

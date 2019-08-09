@@ -4,8 +4,6 @@ title: Liquid
 permalink: /liquid
 ---
 
-# liquid
-
 [liquid](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers)
 
 
