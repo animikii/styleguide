@@ -34,3 +34,4 @@ nav:
   - path: git.md
   - path: liquid.md
   - path: react.md
+  - path: sass.md
