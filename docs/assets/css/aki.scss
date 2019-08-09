@@ -2,15 +2,13 @@
 # front matter for compiling
 ---
 
-@charset "utf-8";
-
 // Import partials.
 @import
-  "aki/bootstrap",
-  "aki/animate",
-  "aki/base",
-  "aki/layout",
-  "aki/syntax-highlighting"
+  "./aki/bootstrap",
+  "./aki/animate",
+  "./aki/base",
+  "./aki/layout",
+  "./aki/syntax-highlighting"
 ;
 
 pre {
