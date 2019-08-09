@@ -4,6 +4,23 @@ title: Sass
 permalink: /sass
 ---
 
+Our conventions for css and scss is comprised of variations of [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/), [OOCSS](https://github.com/stubbornella/oocss/wiki), [SUIT](http://suitcss.github.io/)
+and [airbnb](https://github.com/airbnb/css).
+
+We try to use an approach that combines both OOCSS and BEM for these reasons:
+
+- It helps create clear, strict relationships between CSS and HTML
+- It helps us create reusable, compossible components
+- It allows for less nesting and lower specificity
+- It helps in building scalable stylesheets
+
+Under no circumstance should you use `!important`, if you are, then your doing something wrong.
+
+## Bootstrap
+
+Most of our projects use bootstrap as a our starting point. When you need to change something, try to change the source first.
+This means going into the un minified version of bootstrap and changing the styles you want.
+
 ## Formatting
 
 - Use soft tabs (2 spaces) for indentation
