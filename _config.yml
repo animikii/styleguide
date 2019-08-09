@@ -25,10 +25,6 @@ kramdown:
 
 source: _docs
 
-sass:
-  sass_dir: assets/css
-  style: compressed
-
 nav:
   - path: communication.md
   - path: ruby/index.md
