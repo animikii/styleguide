@@ -9,7 +9,11 @@ Please keep in mind that **master** is the production branch. If you merge anyth
 
     bundle install
 
+    // serve
     bundle exec jekyll serve
+
+    // watch
+    bundle exec jekyll serve -w
 
 Go to http://localhost:4000
 
