@@ -1,3 +1,9 @@
+---
+layout: page
+title: Liquid
+permalink: /liquid/
+---
+
 # liquid
 
 [liquid](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers)
@@ -9,17 +15,20 @@ Commonly used snippets for projects and/or development.
 
 #### settings popup link
 
-```liquid
+``` liquid
+{%- raw -%}
 {% if logged_in %}
   <a href="/pages/settings/{{ p.id }}" onclick="window.open('/pages/settings/{{ p.id }}', '_blank', 'width=600,height=650,scrollbars=yes');return false;">
     Settings
   </a>
 {% endif %}
+{% endraw %}
 ```
 
 #### description edit form
 
-```liquid
+``` liquid
+{%- raw -%}
 // page.liquid
 // in a for loop
 {% for p in page.children %}
@@ -34,9 +43,11 @@ Commonly used snippets for projects and/or development.
   {% assign edit_description_form_page = page %}
   {% include 'edit_description_form' %}
 {% endif %}
+{% endraw %}
 ```
 
-```liquid
+``` liquid
+{%- raw -%}
 // _edit_description_form.liquid
 <p><a href="#" onclick="return false;" data-toggle="modal" data-target="#edit_page_{{ edit_description_form_page.id }}_modal">Edit Description</a></p>
 
@@ -92,6 +103,7 @@ Commonly used snippets for projects and/or development.
     </div>
   </div>
 </div>
+{% endraw %}
 ```
 
 #### flat nav
@@ -99,7 +111,8 @@ Commonly used snippets for projects and/or development.
 To create a nav like the one this site, Next Previous across the tree.
 This however only supports 1-2 levels
 
-```liquid
+``` liquid
+{%- raw -%}
 {% capture string %}{% for p in page.root.menu %}{{ p.url }} {% if p.has_visible_children? %}{% for child in p.visible_children %}{{ child.url }}{% endfor %}{% endif %}{% endfor %}{% endcapture %}
 
 {% assign items = string | split:" " %}
@@ -131,24 +144,28 @@ This however only supports 1-2 levels
     <a class="nav nav-next" href="{{ next }}"><i class="fa fa-chevron-right"></i></a>
   {% endif %}
 </div>
+{% endraw %}
 ```
 
 #### nav using a recursive loop
 This is a simple nav, using a macro for the loop render.
 
-```liquid
+``` liquid
+{%- raw -%}
 // _nav_side.liquid
 <div class="nav-side">
   {% assign nav_loop = page.root.menu %}
-  
+
   <h3><a href="{{ page.root.url }}">{{ page.root.name }}</a></h3>
   <ul class="nav">
     {% include 'nav_side_loop' %}
   </ul>
 </div>
+{% endraw %}
 ```
 
-```liquid
+``` liquid
+{%- raw -%}
 // _nav_side_loop.liquid
 {% for p in nav_loop %}
   {% if p.id == page.id %}
@@ -164,7 +181,7 @@ This is a simple nav, using a macro for the loop render.
       {% endif %}
       <span>{{ p.name }}</span>
     </a>
-    
+
     {% assign ancestors = page.ancestors | map: "id" | join: ' '  %}
     {% if p.id == page.id or ancestors contains p.id %}
       {% if p.has_visible_children? %}
@@ -176,13 +193,15 @@ This is a simple nav, using a macro for the loop render.
     {% endif %}
   </li>
 {% endfor %}
+{% endraw %}
 ```
 
 #### row loop
 
 If you want modulo a different loop then change the `modulo:4` to something else like 2,3,4
 
-```liquid
+``` liquid
+{%- raw -%}
 // _row_loop.liquid
 {% assign count = 1 %}
 
@@ -213,6 +232,7 @@ If you want modulo a different loop then change the `modulo:4` to something else
 {% if countBottom != 1 %}
  </div>
 {% endif %}
+{% endraw %}
 ```
 result :)
 
@@ -232,7 +252,7 @@ result :)
 
 with a regular loop you would get something like this
 
-```html  
+```html
 <div class="row">
   <div class="col-md-3"></div>
   <div class="col-md-3"></div>

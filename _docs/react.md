@@ -1,3 +1,9 @@
+---
+layout: page
+title: React
+permalink: /react/
+---
+
 # React
 
 - Only include one React component per file (see below).
