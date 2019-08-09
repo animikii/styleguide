@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Git
-permalink: /git/
+permalink: /git
 ---
 
 # Git

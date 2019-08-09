@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Liquid
-permalink: /liquid/
+permalink: /liquid
 ---
 
 # liquid

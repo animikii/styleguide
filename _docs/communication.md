@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Communication
-permalink: /communication/
+permalink: /communication
 ---
 
 # Communication

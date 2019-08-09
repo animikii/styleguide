@@ -1,7 +1,7 @@
 ---
 layout: page
 title: React
-permalink: /react/
+permalink: /react
 ---
 
 # React

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Rails
-permalink: /rails/
+permalink: /ruby/rails
 ---
 
 # Rails
