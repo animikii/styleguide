@@ -1,4 +1,8 @@
-# scss/css
+---
+layout: page
+title: Sass
+permalink: /sass
+---
 
 ## Formatting
 
