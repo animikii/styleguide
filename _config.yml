@@ -1,6 +1,3 @@
-
-source: _docs
-
 title: Your awesome title
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
@@ -25,6 +22,12 @@ kramdown:
     block:
       line_numbers: true
       start_line: 1
+
+source: _docs
+
+sass:
+  sass_dir: assets/css
+  style: compressed
 
 nav:
   - path: communication.md
