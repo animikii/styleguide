@@ -3,13 +3,11 @@
 ---
 
 // Import partials.
-@import
-  "./aki/bootstrap",
-  "./aki/animate",
-  "./aki/base",
-  "./aki/layout",
-  "./aki/syntax-highlighting"
-;
+@import "aki/bootstrap";
+@import "aki/animate";
+@import "aki/base";
+@import "aki/layout";
+@import "aki/syntax-highlighting";
 
 pre {
   border: 0;
