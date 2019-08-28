@@ -4,7 +4,10 @@ title: Liquid
 permalink: /liquid
 ---
 
-[liquid](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers)
+[liquid](https://shopify.github.io/liquid/)
+
+
+Use the hyphen {% raw %}`{{-`, `-}}`, `{%-`, and `-%}`{% endraw %} over the default to avoid unnecessary whitespace.
 
 
 ### SNIPPETS
