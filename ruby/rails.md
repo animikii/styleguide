@@ -23,7 +23,7 @@ These are the gems we typically use.
 * `kramdown` for rendering Markdown
 * `sidekiq` for background job processing
 * `paperclip` for file attachments
-* `rspec` for testing
+* `minitest` for testing
 
 ## Defaults
 
